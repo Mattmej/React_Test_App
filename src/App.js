@@ -36,6 +36,17 @@ class App extends Component {
 
 
   render() {
+
+    const stateItems = [...Object.values(this.state)];
+
+    const stateList = (
+      <div>
+        {stateItems.map((stateItem) => {
+          return <StateItem stateItem={stateItem} />
+        })}
+      </div>
+    )
+
     return (
       <div>
         {/* <p>{this.state.pageText}</p> */}
@@ -45,6 +56,15 @@ class App extends Component {
               stateItem={stateItem}
             />
           })}</li> */}
+{/* 
+          {stateItems.map((stateItem) => {
+            return 
+              <StateItem stateItem={stateItem} />
+            
+          })} */}
+
+          {stateList}
+
         </div>
         <PageItem item={'This is more stuff.'} />
       </div>
