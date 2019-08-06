@@ -1,32 +1,18 @@
 import React, {Component}  from 'react';
 import PageItem from './Components/PageItem';
+
+// This is a component that consists of a bulleted point.
 import StateItem from './Components/StateItem';
+
 import logo from './logo.svg';
 import './App.css';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+// Here, I will be practicing how to display a state's properties
+// as bullet points in the DOM.
 
 class App extends Component { 
 
+  // The state has multiple properties.
   state = {
     pageText: "This is text.",
     secondPageText: "This is the second line of text.",
@@ -37,8 +23,12 @@ class App extends Component {
 
   render() {
 
+    // First, store the state's properties in an array.
     const stateItems = [...Object.values(this.state)];
 
+    // Then, create a list of StateItem components
+    // by taking the stateItems array
+    // and executing a method on every item in the array.
     const stateList = (
       <div>
         {stateItems.map((stateItem) => {
@@ -49,23 +39,7 @@ class App extends Component {
 
     return (
       <div>
-        {/* <p>{this.state.pageText}</p> */}
-        <div>
-          {/* <li>{this.state.map(stateItem => {
-            return <StateItem 
-              stateItem={stateItem}
-            />
-          })}</li> */}
-{/* 
-          {stateItems.map((stateItem) => {
-            return 
-              <StateItem stateItem={stateItem} />
-            
-          })} */}
-
-          {stateList}
-
-        </div>
+        {stateList}
         <PageItem item={'This is more stuff.'} />
       </div>
     )
