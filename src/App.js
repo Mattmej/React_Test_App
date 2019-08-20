@@ -7,35 +7,21 @@ import StateItem from './Components/StateItem';
 import logo from './logo.svg';
 import './App.css';
 
-// Here, I will be practicing how to display a state's properties
-// as bullet points in the DOM.
+// I will now be practicing how to change state dynamically.
 
 class App extends Component { 
 
   // The state has multiple properties.
   state = {
-    pageText: "This is text.",
-    secondPageText: "This is the second line of text.",
-    thirdPageText: "This is the third line of text."
+    myString: ''
   }
 
 
 
   render() {
 
-    // First, store the state's properties in an array.
-    const stateItems = [...Object.values(this.state)];
-
-    // Then, create a list of StateItem components
-    // by taking the stateItems array
-    // and executing a method on every item in the array.
-    const stateList = (
-      <div>
-        {stateItems.map((stateItem) => {
-          return <StateItem stateItem={stateItem} />
-        })}
-      </div>
-    )
+    // Here, I will create a string to hold the current state
+    let stateString = this.state.myString;
 
     return (
       <div>
